@@ -34,17 +34,17 @@ body {
 }
 
 .imageText { 
-  position: absolute; 
-  top: 20vw; 
-  left: 5vh; 
+  position: relative; 
+  top: -25vw; 
+  left: 5vw; 
   font-size: 5vw;
 }
 
 .imageSubtext { 
-  position: absolute; 
-  top: 25vw; 
-  left: 5vh; 
-  font-size: 2vw;
+  position: relative; 
+  top: -27vw; 
+  left: 5vw; 
+  font-size: 3vw;
 }
 
 /* Rounded border */
