@@ -14,11 +14,11 @@ export default class Home extends Component {
                     <div className='imageText'>The Waldorf Medical Clinic</div>
                     <div className='imageSubtext'>Personalized Primary Care Just For You</div>
                 </div>
-                    <Hours />
-                    <ChooseUs />
-                    <PatientPortalSS />
-                    <hr className='divider' />
-                    <TelehealthSS />
+                <Hours />
+                <ChooseUs />
+                <PatientPortalSS />
+                <hr className='divider' />
+                <TelehealthSS />
             </div>
         )
     }

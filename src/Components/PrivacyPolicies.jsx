@@ -19,7 +19,7 @@ export default class PrivacyPolicies extends Component {
                                 The Rule requires appropriate safeguards to protect the privacy of personal health information, and sets limits and conditions on the uses and disclosures that may be made of such information without patient authorization. '
                                 The Rule also gives patients rights over their health information, including rights to examine and obtain a copy of their health records, and to request corrections.
                             </div>
-                            <div style={{marginTop:'3vh'}}>
+                            <div style={{ marginTop: '3vh' }}>
                                 The Waldorf Medical Clinic complies with all HIPAA rules and regulations. To see more information about HIPAA, visit <a href='https://www.hhs.gov/hipaa/for-professionals/privacy/index.html'>https://www.hhs.gov/hipaa/for-professionals/privacy/index.html</a>
                             </div>
                         </Col>

@@ -41,9 +41,6 @@ const Example = (props) => {
                                 <DropdownItem href="/insurance/">
                                     Insurance
                                 </DropdownItem>
-                                {/* <DropdownItem href="/patient_education/">
-                                    Patient Education
-                                </DropdownItem> */}
                                 <DropdownItem href="/patient_forms/">
                                     Patient Forms
                                 </DropdownItem>

@@ -77,14 +77,14 @@ export default class ChooseUs extends Component {
                                         <div>Please checkout the insurances we accept to see if we accept yours!</div>
                                     </Col>
                                     <Col lg='12' xs='12'>
-                                        <Button href="/insurance/" style={{backgroundColor:'#e28743', marginTop:'1vh'}}>Insurance</Button>{' '}
+                                        <Button href="/insurance/" style={{ backgroundColor: '#e28743', marginTop: '1vh' }}>Insurance</Button>{' '}
                                     </Col>
                                 </Row>
                             </Container>
                         </Col>
                     </Row>
                 </Container>
-                <div style={{height:'10vh', backgroundColor:'#abdbe3'}}></div>
+                <div style={{ height: '10vh', backgroundColor: '#abdbe3' }}></div>
             </div>
         )
     }

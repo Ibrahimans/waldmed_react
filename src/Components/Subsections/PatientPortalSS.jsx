@@ -12,7 +12,7 @@ export default class PatientPortalSS extends Component {
                             <Container>
                                 <Row>
                                     <Col xs='12'>
-                                        <a href='https://waldorfmed.mymedaccess.com/login'><img src={MymedAccess} style={{ width:'100%', border:'2px solid gray', borderRadius:'8px'}}/></a>
+                                        <a href='https://waldorfmed.mymedaccess.com/login'><img src={MymedAccess} alt='' style={{ width: '100%', border: '2px solid gray', borderRadius: '8px' }} /></a>
                                     </Col>
                                 </Row>
                             </Container>
@@ -32,7 +32,7 @@ export default class PatientPortalSS extends Component {
                         </Col>
                     </Row>
                 </Container>
-                <div style={{height:'10vh'}}></div>
+                <div style={{ height: '10vh' }}></div>
             </div>
         )
     }

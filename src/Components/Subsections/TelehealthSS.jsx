@@ -15,7 +15,7 @@ export default class TelehealthSS extends Component {
                                     <Col xs='12' style={{ textAlign: 'left' }}>
                                         <h1>Telehealth</h1>
                                         <div>Access your telehealth meeting with Dr. Ansari by going to <a href='https://doxy.me/zansari'>https://doxy.me/zansari</a>. <br />(You must have a scheduled Telehealth meeting
-                                            to be seen by Dr. Ansari) 
+                                            to be seen by Dr. Ansari)
                                         </div>
                                     </Col>
                                 </Row>
@@ -25,14 +25,14 @@ export default class TelehealthSS extends Component {
                             <Container>
                                 <Row>
                                     <Col xs='12'>
-                                        <a href='https://doxy.me/zansari'><img src={doxyme} style={{ width: '100%', border: '2px solid gray', borderRadius: '8px', textAlign: 'center' }} /></a>
+                                        <a href='https://doxy.me/zansari'><img src={doxyme} alt='' style={{ width: '100%', border: '2px solid gray', borderRadius: '8px', textAlign: 'center' }} /></a>
                                     </Col>
                                 </Row>
                             </Container>
                         </Col>
                     </Row>
                 </Container>
-                <div style={{height:'10vh'}}></div>
+                <div style={{ height: '10vh' }}></div>
             </div>
         )
     }
