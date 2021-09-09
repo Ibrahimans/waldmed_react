@@ -6,7 +6,7 @@ export default class PatientForms extends Component {
     render() {
         return (
             <div>
-                <Container style={{ textAlign: 'center', marginTop: '20vh', marginBottom: '20vh' }}>
+                <Container style={{ textAlign: 'center', marginTop: '20vh', marginBottom: '50vh' }}>
                     <Row>
                         <Col style={{ color: '#063970' }}>
                             <h1>Patient Forms</h1>

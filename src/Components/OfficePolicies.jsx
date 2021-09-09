@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'reactstrap';
 export default class OfficePolicies extends Component {
     render() {
         return (
-            <div style={{ marginTop: '5vh', marginBottom: '5vh' }}>
+            <div style={{ marginTop: '5vh', marginBottom: '15vh' }}>
                 <Container>
                     <Row>
                         <Container style={{ textAlign: 'center', marginBottom: '5vh' }}>

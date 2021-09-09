@@ -21,17 +21,17 @@ const Example = (props) => {
     return (
         <div>
             <Navbar color="light" light expand="md">
-                <NavbarBrand href="/" > The Waldorf Medical Clinic </NavbarBrand>
+                <NavbarBrand href="/" style={{paddingLeft:'1vw'}}> The Waldorf Medical Clinic </NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="ml-auto" navbar style={{ marginLeft: 'auto' }}>
-                        <NavItem>
+                        <NavItem style={{paddingLeft:'1vw'}}>
                             <NavLink href="/services/">Services</NavLink>
                         </NavItem>
                         <UncontrolledDropdown nav inNavbar>
-                            <DropdownToggle nav caret>Office Policy & Info</DropdownToggle>
+                            <DropdownToggle nav caret style={{paddingLeft:'1vw'}}>Office Policy & Info</DropdownToggle>
                             <DropdownMenu right>
-                                <DropdownItem href="/office_policies/">
+                                <DropdownItem href="/office_policies/" >
                                     Office Policies
                                 </DropdownItem>
                                 <DropdownItem href="/privacy_policies/">
@@ -46,13 +46,13 @@ const Example = (props) => {
                                 </DropdownItem>
                             </DropdownMenu>
                         </UncontrolledDropdown>
-                        <NavItem>
+                        <NavItem style={{paddingLeft:'1vw'}}>
                             <NavLink href="/telehealth/">Telehealth & Patient Portal</NavLink>
                         </NavItem>
-                        <NavItem>
+                        <NavItem style={{paddingLeft:'1vw'}}>
                             <NavLink href="/about_us/">About Us</NavLink>
                         </NavItem>
-                        <NavItem>
+                        <NavItem style={{paddingLeft:'1vw'}}>
                             <NavLink href="/contact/">Contact Us</NavLink>
                         </NavItem>
                     </Nav>

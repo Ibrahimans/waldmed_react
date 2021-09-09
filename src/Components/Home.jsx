@@ -9,10 +9,10 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-                <div>
+                <div className='imageContainer'>
                     <img src={genericDoctor} className='image' alt="" />
-                    <div className='imageText'>The Waldorf Medical Clinic</div>
-                    <div className='imageSubtext'>Personalized Primary Care Just For You</div>
+                    <div className='text1'>The Waldorf Medical Clinic</div>
+                    <div className='text2'>Personalized Primary Care Just For You</div>
                 </div>
                 <Hours />
                 <ChooseUs />

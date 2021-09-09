@@ -5,7 +5,7 @@ export default class PrivacyPolicies extends Component {
     render() {
         return (
             <div>
-                <Container style={{ textAlign: 'center', marginTop: '20vh', marginBottom: '20vh' }}>
+                <Container style={{ textAlign: 'center', marginTop: '20vh', marginBottom: '25vh' }}>
                     <Row>
                         <Col style={{ color: '#063970' }}>
                             <h1>HIPAA Privacy</h1>
