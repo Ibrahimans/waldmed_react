@@ -45,8 +45,6 @@ const NavigationBar = ({ user }) => {
     fetchAdminStatus(user);
   }, [user]);
 
-  console.log("user");
-  console.log(user);
   return (
     <div>
       <Navbar color="light" light expand="md">
@@ -97,11 +95,6 @@ const NavigationBar = ({ user }) => {
                 <NavLink href="/bloodpressure/admin">Admin</NavLink>
               </NavItem>
             )}
-            {/* {Boolean(user) && (
-              <NavItem style={{ paddingLeft: "1vw" }} onClick={signOut}>
-                <NavLink href="#">Sign Out</NavLink>
-              </NavItem>
-            )} */}
             {Boolean(user) && (
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret style={{ paddingLeft: "1vw" }}>

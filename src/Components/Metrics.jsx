@@ -35,7 +35,6 @@ export default function Metrics({ readings, selectedEmail }) {
     const startDate = new Date(selectionRange.startDate);
     const endDate = new Date(selectionRange.endDate);
     endDate.setDate(endDate.getDate() + 1);
-    console.log(startDate.getTime(), endDate.getTime());
 
     const _selectedReadings = readings.filter((reading) => {
       const { readingTs } = reading;
@@ -90,7 +89,6 @@ export default function Metrics({ readings, selectedEmail }) {
   }, [readings, selectionRange]);
 
   const metrics = getMetrics();
-  console.log(metrics);
 
   const customDayContent = (day) => {
     let extraDot;

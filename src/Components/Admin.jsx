@@ -16,7 +16,6 @@ function Admin({ isAdmin }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(event);
     listReadingsByEmail();
     setSelectedEmail(email);
     setEmail("");
