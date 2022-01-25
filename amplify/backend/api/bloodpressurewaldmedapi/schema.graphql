@@ -1,0 +1,10 @@
+type Readings
+  @model
+  @auth(rules: [{ allow: owner }, { allow: groups, groups: ["Admin"] }])
+  @key(fields: ["email", "readingTs"]) {
+  email: String!
+  readingTs: String!
+  sbp: Int!
+  dbp: Int!
+  heartRate: Int!
+}

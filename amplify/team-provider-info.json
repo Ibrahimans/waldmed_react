@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-waldmedreact-dev-213809-authRole",
+      "UnauthRoleArn": "arn:aws:iam::578496460545:role/amplify-waldmedreact-dev-213809-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::578496460545:role/amplify-waldmedreact-dev-213809-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-waldmedreact-dev-213809-deployment",
+      "UnauthRoleName": "amplify-waldmedreact-dev-213809-unauthRole",
+      "StackName": "amplify-waldmedreact-dev-213809",
+      "StackId": "arn:aws:cloudformation:us-east-1:578496460545:stack/amplify-waldmedreact-dev-213809/5af87500-71be-11ec-97fe-0e72790b6507",
+      "AmplifyAppId": "d1uxnkvr7l1j3g"
+    },
+    "categories": {
+      "auth": {
+        "waldmedreact4b520754": {}
+      }
+    }
+  }
+}
