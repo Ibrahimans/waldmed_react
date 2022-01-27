@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { API, graphqlOperation, Auth } from "aws-amplify";
 
-import { withAuthenticator } from "@aws-amplify/ui-react";
 import { createReadings } from "../graphql/mutations";
 import { Container, Form, Label, Input, FormGroup } from "reactstrap";
 import Datetime from "react-datetime";
@@ -13,7 +12,7 @@ import { Alert } from "@mui/material";
 const initialState = { sbp: "", dbp: "", heartRate: "", readingTs: moment() };
 const initialAlert = { severity: "info", visible: false, message: "" };
 
-function BloodPressure() {
+function BloodPressureForm() {
   const [formState, setFormState] = useState(initialState);
   const [alert, setAlert] = useState(initialAlert);
 
@@ -158,4 +157,4 @@ function BloodPressure() {
   );
 }
 
-export default withAuthenticator(BloodPressure);
+export default BloodPressureForm;

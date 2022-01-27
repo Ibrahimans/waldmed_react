@@ -8,6 +8,8 @@ import { Container, Spinner } from "reactstrap";
 import Metrics from "./Metrics";
 import { API, Auth, graphqlOperation } from "aws-amplify";
 import { listReadings } from "../graphql/queries";
+import { withAuthenticator } from "@aws-amplify/ui-react";
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -36,7 +38,7 @@ function a11yProps(index) {
   };
 }
 
-export default function BloodPressure() {
+function BloodPressure() {
   const [selectedEmail, setSelectedEmail] = useState("");
   const [readings, setReadings] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -101,3 +103,5 @@ export default function BloodPressure() {
     </Box>
   );
 }
+
+export default withAuthenticator(BloodPressure);
