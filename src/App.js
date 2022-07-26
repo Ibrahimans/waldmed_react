@@ -16,6 +16,8 @@ import Admin from "./Components/Admin";
 import Error from "./Components/Error";
 import Footer from "./Components/Footer";
 import { Auth, Hub } from "aws-amplify";
+import SignIn from "./Components/SignIn";
+import SMSTool from "./Components/SMSTool/SMSTool";
 
 const WALDMED_ADMIN_GROUP = "Admin";
 
@@ -79,6 +81,8 @@ export default class App extends Component {
           />
           <Route path="/bloodpressure/" component={BloodPressure} />
           <Route path="/contact/" component={Contact} />
+          <Route path="/sign-in/" component={SignIn} />
+          <Route path="/sms/" component={SMSTool} />
           <Route component={Error} />
         </Switch>
         <Footer />

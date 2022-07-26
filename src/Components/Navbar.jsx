@@ -83,16 +83,28 @@ const NavigationBar = ({ user }) => {
               <NavLink href="/about_us/">About Us</NavLink>
             </NavItem>
             <NavItem style={{ paddingLeft: "1vw" }}>
-              <NavLink href="/bloodpressure/">
-                Blood Pressure Monitoring
-              </NavLink>
-            </NavItem>
-            <NavItem style={{ paddingLeft: "1vw" }}>
               <NavLink href="/contact/">Contact Us</NavLink>
             </NavItem>
+            {Boolean(user) && (
+              <NavItem style={{ paddingLeft: "1vw" }}>
+                <NavLink href="/bloodpressure/">
+                  Blood Pressure Monitoring
+                </NavLink>
+              </NavItem>
+            )}
+            {!Boolean(user) && (
+              <NavItem style={{ paddingLeft: "1vw" }}>
+                <NavLink href="/sign-in">Sign In</NavLink>
+              </NavItem>
+            )}
             {isAdmin && (
-              <NavItem style={{ paddingLeft: "1vw" }} onClick={signOut}>
-                <NavLink href="/bloodpressure/admin">Admin</NavLink>
+              <NavItem style={{ paddingLeft: "1vw" }}>
+                <NavLink href="/bloodpressure/admin">Admin BP</NavLink>
+              </NavItem>
+            )}
+            {isAdmin && (
+              <NavItem style={{ paddingLeft: "1vw" }}>
+                <NavLink href="/sms">SMS Tool</NavLink>
               </NavItem>
             )}
             {Boolean(user) && (
