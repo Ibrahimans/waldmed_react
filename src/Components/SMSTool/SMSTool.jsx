@@ -19,6 +19,7 @@ export default function SMSTool() {
   const [buttonClicked, setButtonClicked] = useState(false);
   const [loading, setLoading] = useState(false);
   const [alerts, setAlerts] = useState([]);
+
   const sendSMS = async () => {
     setButtonClicked(true);
     setLoading(true);
@@ -98,6 +99,7 @@ export default function SMSTool() {
     }
     return flattened;
   };
+
   const handleFileChange = (e) => {
     resetState();
     const file = e.target.files[0];
@@ -105,6 +107,16 @@ export default function SMSTool() {
     fileReader.onloadend = (e) => {
       const content = e.target.result;
       const appointments = parseTextFile(content);
+
+      if (hasDuplicateForAppointments(appointments)) {
+        setAlerts((alerts) => [
+            ...alerts,
+            {
+              severity: "error",
+              message: "Found Duplicate Phone Numbers in list. Please correct file and try again",
+            },
+          ]);
+      }
       setAppointments(appointments);
     };
 
@@ -178,6 +190,14 @@ export default function SMSTool() {
     });
   };
 
+  const hasDuplicateForAppointments = (appointments) => {
+    if (!appointments) return false;
+    const phoneNumbers = flattenAppointment(appointments)
+      .map(({ phoneNumber }) => phoneNumber);
+
+    return (phoneNumbers.length !== new Set(phoneNumbers).size);
+  }
+
   // useEffect(() => {
   //   async function logJWT() {
   //     const res = await Auth.currentSession();
@@ -188,6 +208,12 @@ export default function SMSTool() {
   //   logJWT();
   // }, []);
 
+  // const hasDuplicate = appointments.find();
+  const hasDuplicate = hasDuplicateForAppointments(appointments);
+
+  console.log('appointments');
+  console.log(appointments);
+
   return (
     <Container style={{ minHeight: "90vh", textAlign: "center" }}>
       <Input type="file" accept=".txt" onChange={handleFileChange} />
@@ -195,7 +221,7 @@ export default function SMSTool() {
         <Container>
           <SMSTable appointments={appointments} />
           {loading && <CircularProgress />}
-          <Button variant="outlined" onClick={sendSMS} disabled={buttonClicked}>
+          <Button variant="outlined" onClick={sendSMS} disabled={buttonClicked || hasDuplicate}>
             Send SMS
           </Button>
         </Container>
