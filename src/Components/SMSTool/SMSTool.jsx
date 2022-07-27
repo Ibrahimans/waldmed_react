@@ -208,11 +208,7 @@ export default function SMSTool() {
   //   logJWT();
   // }, []);
 
-  // const hasDuplicate = appointments.find();
   const hasDuplicate = hasDuplicateForAppointments(appointments);
-
-  console.log('appointments');
-  console.log(appointments);
 
   return (
     <Container style={{ minHeight: "90vh", textAlign: "center" }}>
