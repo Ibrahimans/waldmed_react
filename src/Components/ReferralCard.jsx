@@ -65,4 +65,3 @@ export default function ReferralCard({ npi, fullName, table }) {
         </Box>
     );
 }
-// export default ReferralCard;
