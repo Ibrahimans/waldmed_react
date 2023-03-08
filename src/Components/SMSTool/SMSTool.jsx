@@ -8,7 +8,7 @@ import {
   Stack,
 } from "@mui/material";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import SMSTable from "./SMSTable";
 
 const WALDMED_SMS_URL =

@@ -12,6 +12,7 @@ import Telehealth from "./Components/Telehealth";
 import AboutUs from "./Components/AboutUs";
 import Contact from "./Components/Contact";
 import BloodPressure from "./Components/BloodPressure";
+import Referrals from "./Components/Referrals";
 import Admin from "./Components/Admin";
 import Error from "./Components/Error";
 import Footer from "./Components/Footer";
@@ -80,6 +81,7 @@ export default class App extends Component {
             render={() => <Admin isAdmin={isAdmin} />}
           />
           <Route path="/bloodpressure/" component={BloodPressure} />
+          <Route path="/referrals/" component={Referrals} />
           <Route path="/contact/" component={Contact} />
           <Route path="/sign-in/" component={SignIn} />
           <Route path="/sms/" component={SMSTool} />

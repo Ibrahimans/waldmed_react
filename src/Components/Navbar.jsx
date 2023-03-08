@@ -85,10 +85,17 @@ const NavigationBar = ({ user }) => {
             <NavItem style={{ paddingLeft: "1vw" }}>
               <NavLink href="/contact/">Contact Us</NavLink>
             </NavItem>
-            {Boolean(user) && (
+            {/* {Boolean(user) && (
               <NavItem style={{ paddingLeft: "1vw" }}>
                 <NavLink href="/bloodpressure/">
                   Blood Pressure Monitoring
+                </NavLink>
+              </NavItem>
+            )} */}
+            {isAdmin && (
+              <NavItem style={{ paddingLeft: "1vw" }}>
+                <NavLink href="/referrals">
+                  Referrals
                 </NavLink>
               </NavItem>
             )}
