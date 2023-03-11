@@ -3,9 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import ReferralCard from "./ReferralCard";
 
-const API_URL = 'https://71.178.217.118:3000';
-
-
+const API_URL = 'https://hansari.org';
 
 function Referrals() {
     const [insurances, setInsurances] = useState([]);
