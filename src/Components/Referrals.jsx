@@ -1,4 +1,4 @@
-import { Button, Container, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import { Alert, Box, Button, Container, FormControl, InputLabel, MenuItem, Select, Typography } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ReferralCard from "./ReferralCard";
@@ -9,8 +9,10 @@ function Referrals() {
     const [insurances, setInsurances] = useState([]);
     const [specialties, setSpecialties] = useState([]);
     const [preferredProviders, setPreferredProviders] = useState([]);
+    const [allProviders, setAllProviders] = useState([]);
     const [selectedInsurance, setSelectedInsurance] = useState(null);
     const [selectedSpecialty, setSelectedSpecialty] = useState(null);
+    const [noPreferredProvidersFound, setNoPreferredProvidersFound] = useState(false);
 
     useEffect(() => {
         getInsurancesAndSpecialties();
@@ -31,10 +33,24 @@ function Referrals() {
         setSelectedInsurance(value);
     }
 
+    const handleSubmit = async () => {
+        await getPreferredProviders();
+        getAllProviders();
+    }
+
     const getPreferredProviders = async () => {
         const { data: _preferredProviders } = await axios.get(`${API_URL}/preferred_providers`, { params: { insurance: selectedInsurance, specialty: selectedSpecialty } });
         setPreferredProviders(_preferredProviders);
+
+        _preferredProviders.length ? setNoPreferredProvidersFound(false) : setNoPreferredProvidersFound(true);
     }
+
+    const getAllProviders = async () => {
+        const { data: _allProviders } = await axios.get(`${API_URL}/providers`, { params: { insurance: selectedInsurance, specialty: selectedSpecialty } });
+        setAllProviders(_allProviders)
+    }
+
+    const otherProviders = allProviders.filter(({ npi }) => !preferredProviders.map(({ npi: _npi }) => _npi).includes(npi));
 
 
     return (
@@ -64,13 +80,29 @@ function Referrals() {
                 </Select>
             </FormControl>
             <Button
-                onClick={getPreferredProviders}
+                sx={{ margin: "10px" }}
+                onClick={handleSubmit}
                 variant="outlined"
-                disabled={!(selectedInsurance && selectedSpecialty)}>Submit</Button>
+                disabled={!(selectedInsurance && selectedSpecialty)}>Search</Button>
 
-            {Boolean(preferredProviders.length) && <Container>
-                {preferredProviders.map(p => <ReferralCard npi={p.npi} fullName={p.fullName} table={p.table} />)}
-            </Container>}
+            {noPreferredProvidersFound && <Alert severity="warning" sx={{ margin: "10px" }}>No Preferred Providers Found</Alert>}
+            {Boolean(preferredProviders.length) && (
+                <Container>
+                    <Typography component="div" sx={{ textAlign: "left", textTransform: "uppercase" }}>Preferred Providers</Typography>
+                    <Box>
+                        {preferredProviders.map(p => <ReferralCard npi={p.npi} fullName={p.fullName} table={p.table} preferred />)}
+                    </Box>
+                </Container>
+            )}
+
+            {Boolean(otherProviders.length) && (
+                <Container>
+                    <Typography component="div" sx={{ textAlign: "left", textTransform: "uppercase" }}>Other Providers</Typography>
+                    <Box>
+                        {otherProviders.map(p => <ReferralCard npi={p.npi} fullName={p.fullName} table={p.table} />)}
+                    </Box>
+                </Container>
+            )}
         </Container>
 
     )
